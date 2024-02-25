@@ -53,8 +53,8 @@ class Program
             double sideFirstRectangle = 0;
             double sideSecondRectangle = 0;
 
-            sideFirstRectangle = recX1 > recX2 ? recX1 - recX2 : recX2 - recX1;
-            sideSecondRectangle = recY1 > recY2 ? recY1 - recY2 : recY2 - recY1;
+            sideFirstRectangle = Math.Abs(recX2 - recX1);
+            sideSecondRectangle = Math.Abs(recY2 - recY1);
 
             System.Console.WriteLine($"\n\nПериметр прямоугольника = {sideFirstRectangle * 2 + sideSecondRectangle * 2}");
             System.Console.WriteLine($"Площадь прямоугольника = {sideFirstRectangle * sideSecondRectangle}");
