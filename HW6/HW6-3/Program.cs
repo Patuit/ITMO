@@ -1,6 +1,6 @@
 ﻿namespace HW6_3;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -27,34 +27,34 @@ class Program
     /// Поиск символов заключенных в фигурные скобки {...}
     /// </summary>
     /// <param name="rawString">Строка для поиска</param>
-    /// <param name="startStr"></param>
-    /// <param name="lenStr"></param>
+    /// <param name="startStr">Начальная позиция найденной подстроки. Вернёт -1 если ничего не найдёт.</param>
+    /// <param name="lenStr">Длина найденной подстроки</param>
     /// <returns>Результат поиска фигурных скобок в строке</returns>
     static public bool FindStaples(string rawString, out int startStr, out int lenStr)
     {
-        startStr = 0;
+        startStr = -1;
         lenStr = 0;
-        int staples1 = 0;
+        int countStaples = 0;
         bool flag = false;
 
         for (int i = 0; i < rawString.Length; i++)
         {
             if (rawString[i] == '{')
             {
-                if (startStr != 0)
+                if (startStr != -1)
                 {
-                    staples1++;
+                    countStaples++;
                 }
                 else
                 {
                     startStr = i;
                 }
             }
-            if (rawString[i] == '}')
+            if (rawString[i] == '}' && startStr != -1)
             {
-                if (staples1 > 0)
+                if (countStaples > 0)
                 {
-                    staples1--;
+                    countStaples--;
                 }
                 else
                 {
@@ -63,6 +63,12 @@ class Program
                     break;
                 }
             }
+        }
+
+        // Если не нашли закрывающую скобку, то тоже возвращаем -1 как в случае когда нет ничего
+        if (startStr != -1 && flag != true)
+        {
+            startStr = -1;
         }
         return flag;
     }
