@@ -35,7 +35,7 @@ class Program
                 double y0 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Введите радиус круга:");
                 double r = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine(MathCircle.GetInlineCircle(r, x0, y0, x, y) ? $"Точка({x}, {y}) принадлежит кругу с центром ({x0}, {y0}) и радиусом {r}." : "");
+                Console.WriteLine($"Точка({x}, {y}) {(MathCircle.GetInlineCircle(r, x0, y0, x, y) ? "" : "не ")}принадлежит кругу с центром ({x0}, {y0}) и радиусом {r}.");
                 break;
             }
             catch (System.Exception)

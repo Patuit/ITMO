@@ -33,6 +33,6 @@ public static class MathCircle
     /// <returns>true - точка принадлежит кругу, false - не принадлежит</returns>
     public static bool GetInlineCircle(double radius, double x0, double y0, double x, double y)
     {
-        return Math.Pow(x0 - x, 2) + Math.Pow(y0 - y, 2) < radius;
+        return Math.Sqrt(Math.Pow(x0 - x, 2) + Math.Pow(y0 - y, 2)) < radius;
     }
 }
