@@ -1,0 +1,22 @@
+[
+  {
+    "CodeProduct": 4,
+    "NameProduct": "name1",
+    "PriceProduct": 7000
+  },
+  {
+    "CodeProduct": 29,
+    "NameProduct": "Name2",
+    "PriceProduct": 2093
+  },
+  {
+    "CodeProduct": 53,
+    "NameProduct": "Name3",
+    "PriceProduct": 9000
+  },
+  {
+    "CodeProduct": 17,
+    "NameProduct": "Name4",
+    "PriceProduct": 10
+  }
+]
